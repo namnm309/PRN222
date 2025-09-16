@@ -57,8 +57,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -68,7 +76,8 @@
               "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\PRN222\\Network\\Server\\MainWindow.xaml",
               "RelativeToolTip": "Server\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-15T15:53:47.462Z"
+              "WhenOpened": "2025-09-15T15:53:47.462Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -161,7 +170,8 @@
               "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\PRN222\\Network\\Client\\App.xaml",
               "RelativeToolTip": "Client\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-16T06:05:29.061Z"
+              "WhenOpened": "2025-09-16T06:05:29.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -197,14 +207,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T15:53:45.363Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }
