@@ -1,0 +1,34 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- cấu hình -->
+            <RowDefinition Height="*"/>   <!-- tin nhắn -->
+            <RowDefinition Height="Auto"/> <!-- nhập -->
+        </Grid.RowDefinitions>
+
+        <!-- cấu hình -->
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="Host:" VerticalAlignment="Center"/>
+            <TextBox x:Name="HostBox" Width="120" Text="127.0.0.1" Margin="0,0,5,0"/>
+            <Label Content="Port:" VerticalAlignment="Center"/>
+            <TextBox x:Name="PortBox" Width="60" Text="13000" Margin="0,0,5,0"/>
+            <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="80"/>
+        </StackPanel>
+
+        <!-- Danh sách tin nhắn -->
+        <ListBox x:Name="Messages" Grid.Row="1" Margin="5"/>
+
+        <!-- Khu vực nhập -->
+        <DockPanel Grid.Row="2" Margin="5">
+            <TextBox x:Name="InputBox" DockPanel.Dock="Left" Width="600" KeyDown="InputBox_KeyDown"/>
+            <Button x:Name="SendBtn" Content="Gửi" Width="80" Margin="5,0,0,0" Click="SendBtn_Click"/>
+        </DockPanel>
+    </Grid>
+</Window>

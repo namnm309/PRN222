@@ -1,0 +1,107 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\FPT\\PRN222\\Network\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\prn222\\network\\server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\prn222\\network\\client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\prn222\\network\\client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\prn222\\network\\server\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\prn222\\network\\server\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TcpChatServer.cs",
+              "DocumentMoniker": "E:\\FPT\\PRN222\\Network\\Server\\TcpChatServer.cs",
+              "RelativeDocumentMoniker": "Server\\TcpChatServer.cs",
+              "ToolTip": "E:\\FPT\\PRN222\\Network\\Server\\TcpChatServer.cs",
+              "RelativeToolTip": "Server\\TcpChatServer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:07:36.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\FPT\\PRN222\\Network\\Client\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Client\\MainWindow.xaml",
+              "ToolTip": "E:\\FPT\\PRN222\\Network\\Client\\MainWindow.xaml",
+              "RelativeToolTip": "Client\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-15T15:54:04.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\FPT\\PRN222\\Network\\Client\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Client\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\FPT\\PRN222\\Network\\Client\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Client\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T15:54:04.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\FPT\\PRN222\\Network\\Server\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Server\\MainWindow.xaml",
+              "ToolTip": "E:\\FPT\\PRN222\\Network\\Server\\MainWindow.xaml",
+              "RelativeToolTip": "Server\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-15T15:53:47.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\FPT\\PRN222\\Network\\Server\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Server\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\FPT\\PRN222\\Network\\Server\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Server\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T15:53:45.363Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
