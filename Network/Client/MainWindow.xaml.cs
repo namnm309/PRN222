@@ -154,8 +154,15 @@ namespace Client
                 var dlg = new Microsoft.Win32.SaveFileDialog { FileName = cf.FileName };
                 if (dlg.ShowDialog() == true)
                 {
-                    try { System.IO.File.Copy(cf.TempPath, dlg.FileName, true); }
-                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    try
+                    {
+                        System.IO.File.Copy(cf.TempPath, dlg.FileName, true);
+                        MessageBox.Show("Lưu tập tin thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }

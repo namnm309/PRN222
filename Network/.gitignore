@@ -1,0 +1,58 @@
+# Build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Resharper / Rider
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+**/packages/
+*.snupkg
+# NuGet restore
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+
+# Cache
+**/AppData/Local/Temp/
+
+# WPF generated
+**/*.g.cs
+**/*.g.i.cs
+**/*.baml
+
+# Publish outputs
+**/publish/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Rider & JetBrains
+.idea/
+
+# Others
+*.tmp
+*.bak
+*.swp
