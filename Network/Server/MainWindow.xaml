@@ -24,7 +24,10 @@
                         <Run Text="{Binding FileName, Mode=OneWay}" />
                     </Hyperlink>
                 </TextBlock>
-                <TextBlock Text=" (nhấn để lưu)" Foreground="Gray" Margin="6,0,0,0"/>
+                <TextBlock Text=" (" Foreground="Gray"/>
+                <TextBlock Text="{Binding DisplaySize, Mode=OneWay}" Foreground="Gray"/>
+                <TextBlock Text=")" Foreground="Gray"/>
+                <TextBlock Text=" – nhấn để lưu" Foreground="Gray" Margin="6,0,0,0"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>

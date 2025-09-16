@@ -133,7 +133,11 @@ namespace Server
                 try
                 {
                     var fi = new System.IO.FileInfo(dlg.FileName);
-                    if (fi.Length > 1_000_000_000) { MessageBox.Show("File quá lớn (>1GB)"); return; }
+                    if (fi.Length > 1_000_000_000)
+                    {
+                        MessageBox.Show($"File quá lớn: {fi.Length / (1024*1024.0):0.##} MB (> 1024 MB)", "Không thể gửi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     await _server.SendToAllAsync($"__FILE_START__|{fi.Name}|{fi.Length}");
                     using var fs = fi.OpenRead();
                     var buffer = new byte[30000];
@@ -192,8 +196,39 @@ namespace Server
                 var dlg = new Microsoft.Win32.SaveFileDialog { FileName = cf.FileName };
                 if (dlg.ShowDialog() == true)
                 {
-                    try { System.IO.File.Copy(cf.TempPath, dlg.FileName, true); }
-                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    var progress = new SaveProgressWindow { Owner = this };
+                    progress.SetStatus("Đang lưu tập tin...");
+                    progress.SetProgress(10);
+                    progress.Show();
+                    try
+                    {
+                        using var src = new System.IO.FileStream(cf.TempPath, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read);
+                        using var dst = new System.IO.FileStream(dlg.FileName, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.None);
+                        var buffer = new byte[64 * 1024];
+                        long written = 0;
+                        int read;
+                        while ((read = src.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            dst.Write(buffer, 0, read);
+                            written += read;
+                            if (cf.Size > 0)
+                            {
+                                var p = (double)written / cf.Size * 100.0;
+                                progress.SetProgress(p);
+                            }
+                        }
+                        progress.SetProgress(100);
+                        progress.SetStatus("Đã lưu xong!");
+                        MessageBox.Show("Lưu tập tin thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    finally
+                    {
+                        progress.Close();
+                    }
                 }
             }
         }
