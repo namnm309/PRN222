@@ -52,3 +52,29 @@ TestResults/
 
 # Others
 *.dbmdl
+
+vs                       # Thư mục cấu hình IDE
+.suo
+.user
+.userosscache
+.sln.docstates
+
+# ==== Thư mục biên dịch ====
+bin
+obj
+[Bb]uild
+[Bb]in
+[Oo]bj
+
+# ==== File sinh ra khi build ====
+.cache
+.pdb
+.exe
+.dll
+.log
+.tmp
+
+# ==== Thư mục test, publish, VS Preview ====
+TestResults
+.publish
+_wpftmp              # Thư mục WPF tạm
