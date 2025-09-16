@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Client
 {
+    /// <summary>
+    /// Lớp client TCP đơn giản:
+    ///  - Kết nối tới server
+    ///  - Nhận dữ liệu bất đồng bộ qua Task riêng
+    ///  - Gửi tin nhắn dưới dạng UTF8
+    /// UI chỉ cần subscribe sự kiện MessageReceived để hiển thị.
+    /// </summary>
     public class TcpChatClient : IDisposable
     {
         private readonly string _host;

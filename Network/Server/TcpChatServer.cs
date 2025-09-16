@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace Server
 {
+    /// <summary>
+    /// Lớp gói gọn logic Server TCP đơn giản cho ứng dụng chat.
+    ///  - Lắng nghe kết nối mới
+    ///  - Nhận dữ liệu từ mỗi client trên luồng riêng
+    ///  - Phát (broadcast) tin nhắn tới tất cả client khác
+    /// </summary>
     public class TcpChatServer : IDisposable
     {
         private readonly IPAddress _ipAddress;
@@ -29,12 +35,18 @@ namespace Server
             _listener = new TcpListener(_ipAddress, _port);
         }
 
+        /// <summary>
+        /// Bắt đầu lắng nghe (non-blocking). Gọi một lần khi khởi động.
+        /// </summary>
         public void Start()
         {
             _listener.Start();
             Task.Run(ListenLoop, _cts.Token);
         }
 
+        /// <summary>
+        /// Vòng lặp chấp nhận client. Chạy nền tới khi Cancel.
+        /// </summary>
         private async Task ListenLoop()
         {
             var token = _cts.Token;
@@ -54,6 +66,9 @@ namespace Server
             catch (OperationCanceledException) { }
         }
 
+        /// <summary>
+        /// Xử lý 1 client: đọc tin & broadcast. Mỗi client 1 Task riêng.
+        /// </summary>
         private async Task HandleClientAsync(TcpClient client, CancellationToken token)
         {
             var stream = client.GetStream();
@@ -80,6 +95,11 @@ namespace Server
                 _clients.TryRemove(client, out _);
             }
         }
+
+        /// <summary>
+        /// Server gửi tin nhắn ra toàn bộ client (khi người vận hành nhập tin).
+        /// </summary>
+        public Task SendToAllAsync(string message) => BroadcastAsync(message, null, _cts.Token);
 
         private async Task BroadcastAsync(string message, TcpClient? exclude, CancellationToken token)
         {

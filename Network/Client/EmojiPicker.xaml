@@ -1,0 +1,26 @@
+<Window x:Class="Client.EmojiPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Emoji" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <ScrollViewer>
+        <UniformGrid Columns="8" Margin="5">
+            <!-- basic emoji set -->
+            <Button Content="😀" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😁" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😂" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😊" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😍" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😎" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="👍" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🙏" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🔥" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🎉" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="❤️" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🤔" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😢" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😡" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🤯" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🥳" FontSize="20" Click="Emoji_Click"/>
+        </UniformGrid>
+    </ScrollViewer>
+</Window>

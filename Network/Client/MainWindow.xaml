@@ -23,11 +23,12 @@
         </StackPanel>
 
         <!-- Danh sách tin nhắn -->
-        <ListBox x:Name="Messages" Grid.Row="1" Margin="5"/>
+        <ListBox x:Name="Messages" Grid.Row="1" Margin="5" FontFamily="Segoe UI Emoji"/>
 
         <!-- Khu vực nhập -->
         <DockPanel Grid.Row="2" Margin="5">
-            <TextBox x:Name="InputBox" DockPanel.Dock="Left" Width="600" KeyDown="InputBox_KeyDown"/>
+            <TextBox x:Name="InputBox" DockPanel.Dock="Left" Width="600" KeyDown="InputBox_KeyDown" FontFamily="Segoe UI Emoji"/>
+            <Button x:Name="EmojiBtn" Content="😀" Width="40" Margin="5,0,0,0" Click="EmojiBtn_Click"/>
             <Button x:Name="SendBtn" Content="Gửi" Width="80" Margin="5,0,0,0" Click="SendBtn_Click"/>
         </DockPanel>
     </Grid>

@@ -10,8 +10,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label x:Name="StatusLabel" Content="Đang khởi động..." FontWeight="Bold" Margin="5"/>
-        <ListBox x:Name="LogList" Grid.Row="1" Margin="5"/>
+        <ListBox x:Name="LogList" Grid.Row="1" Margin="5" FontFamily="Segoe UI Emoji"/>
+
+        <DockPanel Grid.Row="2" Margin="5">
+            <TextBox x:Name="ServerInput" DockPanel.Dock="Left" Width="600" KeyDown="ServerInput_KeyDown" FontFamily="Segoe UI Emoji"/>
+            <Button Content="😀" Width="40" Margin="5,0,0,0" Click="ServerEmoji_Click"/>
+            <Button Content="Gửi" Width="80" Margin="5,0,0,0" Click="ServerSend_Click"/>
+        </DockPanel>
     </Grid>
 </Window>

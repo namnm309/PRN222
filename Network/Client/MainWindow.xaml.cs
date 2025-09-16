@@ -70,6 +70,17 @@ namespace Client
             InputBox.Clear();
         }
 
+        private void EmojiBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new EmojiPicker { Owner = this };
+            if (picker.ShowDialog() == true && picker.SelectedEmoji != null)
+            {
+                InputBox.Text += picker.SelectedEmoji;
+                InputBox.Focus();
+                InputBox.CaretIndex = InputBox.Text.Length;
+            }
+        }
+
         private TcpChatClient? _client;
     }
 }

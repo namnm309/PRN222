@@ -18,3 +18,6 @@ E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\refint\Server.dll
 E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\Server.pdb
 E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\Server.genruntimeconfig.cache
 E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\ref\Server.dll
+E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\Server.sourcelink.json
+E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\EmojiPicker.baml
+E:\FPT\PRN222\Network\Server\obj\Debug\net8.0-windows\EmojiPicker.g.cs
