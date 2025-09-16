@@ -44,3 +44,4 @@ E:\FPT\Kì 7\PRN222\PRN222\Network\Server\obj\Debug\net8.0-windows\refint\Server
 E:\FPT\Kì 7\PRN222\PRN222\Network\Server\obj\Debug\net8.0-windows\Server.pdb
 E:\FPT\Kì 7\PRN222\PRN222\Network\Server\obj\Debug\net8.0-windows\Server.genruntimeconfig.cache
 E:\FPT\Kì 7\PRN222\PRN222\Network\Server\obj\Debug\net8.0-windows\ref\Server.dll
+E:\FPT\Kì 7\PRN222\PRN222\Network\Server\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

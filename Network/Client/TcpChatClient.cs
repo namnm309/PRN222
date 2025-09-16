@@ -21,7 +21,7 @@ namespace Client
         private TcpClient? _client;
         private CancellationTokenSource? _cts;
 
-        public event Action<string>? MessageReceived;
+        public event Action<object>? MessageReceived; // object: string, ChatImage, ChatFile
         public event Action? Connected;
         public event Action? Disconnected;
 
@@ -34,7 +34,10 @@ namespace Client
         public async Task ConnectAsync()
         {
             _client = new TcpClient();
-            await _client.ConnectAsync(_host, _port);
+            await _client.ConnectAsync(_host, _port); //method cung cấp bởi class TCPClient
+            // Đợi 50ms để server xử lý handshake nhằm đảm bảo map tên trước khi user gửi tin đầu tiên.
+            await Task.Delay(50);
+
             Connected?.Invoke();
             _cts = new CancellationTokenSource();
             _ = Task.Run(() => ReceiveLoop(_cts.Token));
@@ -42,33 +45,53 @@ namespace Client
             // Gửi tên thiết bị ngay sau khi kết nối
             string deviceName = Environment.MachineName;
             await SendAsync($"__NAME__|{deviceName}");
+
+            // ready
         }
 
         private async Task ReceiveLoop(CancellationToken token)
         {
             var stream = _client!.GetStream();
-            var buffer = new byte[1024];
+            var buffer = new byte[4096];
+            var sb = new StringBuilder();
             try
             {
                 while (!token.IsCancellationRequested && _client.Connected)
                 {
                     int read = await stream.ReadAsync(buffer, 0, buffer.Length, token);
                     if (read == 0) break;
-                    var raw = Encoding.UTF8.GetString(buffer, 0, read);
-                    // Chuẩn "source|content". Nếu không khớp, để toàn bộ.
-                    string display;
-                    int sep = raw.IndexOf('|');
-                    if (sep > 0)
+                    sb.Append(Encoding.UTF8.GetString(buffer, 0, read));
+                    while (true)
                     {
+                        int nl = sb.ToString().IndexOf('\n');
+                        if (nl < 0) break;
+                        var raw = sb.ToString(0, nl).TrimEnd('\r');
+                        sb.Remove(0, nl + 1);
+                        if (raw.Length == 0) continue;
+                        string display;
+                        int sep = raw.IndexOf('|');
+                        if (sep <= 0) { MessageReceived?.Invoke(raw); continue; }
                         var source = raw.Substring(0, sep);
                         var content = raw[(sep + 1)..];
+
+                        if (content.StartsWith("__IMG__|"))
+                        {
+                            var parts = content.Split('|',3);
+                            if (parts.Length==3)
+                            {
+                                var data = Convert.FromBase64String(parts[2]);
+                                MessageReceived?.Invoke(new ChatImage(source, parts[1], data));
+                            }
+                            continue;
+                        }
+                        if (content.StartsWith("__FILE_"))
+                        {
+                            HandleFileProtocol(source, content);
+                            continue;
+                        }
                         display = $"[{source}] {content}";
+                        MessageReceived?.Invoke(display);
                     }
-                    else
-                    {
-                        display = raw;
-                    }
-                    MessageReceived?.Invoke(display);
                 }
             }
             catch (Exception) when (token.IsCancellationRequested) { }
@@ -82,7 +105,7 @@ namespace Client
         public Task SendAsync(string message)
         {
             if (_client == null || !_client.Connected) return Task.CompletedTask;
-            var data = Encoding.UTF8.GetBytes(message);
+            var data = Encoding.UTF8.GetBytes(message + "\n");
             return _client.GetStream().WriteAsync(data, 0, data.Length);
         }
 
@@ -90,6 +113,79 @@ namespace Client
         {
             _cts?.Cancel();
             _client?.Close();
+        }
+
+        public Task SendImageAsync(string path)
+        {
+            var bytes = System.IO.File.ReadAllBytes(path);
+            var b64 = Convert.ToBase64String(bytes);
+            var name = System.IO.Path.GetFileName(path);
+            return SendAsync($"__IMG__|{name}|{b64}");
+        }
+
+        public async Task SendFileAsync(string path, int chunkSize = 30000)
+        {
+            var fi = new System.IO.FileInfo(path);
+            if (fi.Length > 1_000_000_000) throw new InvalidOperationException("File too large");
+            var name = fi.Name;
+            await SendAsync($"__FILE_START__|{name}|{fi.Length}");
+            using var fs = fi.OpenRead();
+            var buffer = new byte[chunkSize];
+            int read;
+            while ((read = await fs.ReadAsync(buffer, 0, buffer.Length)) > 0)
+            {
+                var chunkB64 = Convert.ToBase64String(buffer, 0, read);
+                await SendAsync($"__FILE_CHUNK__|{name}|{chunkB64}");
+            }
+            await SendAsync($"__FILE_END__|{name}");
+        }
+
+        private class FileReceiveContext
+        {
+            public long Size;
+            public long Written;
+            public string TempPath;
+            public System.IO.FileStream Stream;
+            public FileReceiveContext(long size)
+            {
+                Size = size;
+                TempPath = System.IO.Path.GetTempFileName();
+                Stream = new System.IO.FileStream(TempPath, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.Read);
+            }
+        }
+        private readonly System.Collections.Concurrent.ConcurrentDictionary<string, FileReceiveContext> _fileReceive = new();
+        private void HandleFileProtocol(string source, string content)
+        {
+            if (content.StartsWith("__FILE_START__|"))
+            {
+                var parts = content.Split('|');
+                var name = parts[1];
+                long size = long.Parse(parts[2]);
+                var key = source + "|" + name;
+                _fileReceive[key] = new FileReceiveContext(size);
+            }
+            else if (content.StartsWith("__FILE_CHUNK__|"))
+            {
+                var parts = content.Split('|',3);
+                var name = parts[1];
+                var key = source + "|" + name;
+                if (!_fileReceive.TryGetValue(key, out var ctx)) return;
+                var bytes = Convert.FromBase64String(parts[2]);
+                ctx.Stream.Write(bytes,0,bytes.Length);
+                ctx.Written += bytes.Length;
+            }
+            else if (content.StartsWith("__FILE_END__|"))
+            {
+                var name = content.Split('|')[1];
+                var key = source + "|" + name;
+                if (_fileReceive.TryRemove(key, out var ctx))
+                {
+                    ctx.Stream.Flush();
+                    ctx.Stream.Dispose();
+                    var chatFile = new ChatFile(source, name, ctx.Size, ctx.TempPath);
+                    MessageReceived?.Invoke(chatFile);
+                }
+            }
         }
     }
 }

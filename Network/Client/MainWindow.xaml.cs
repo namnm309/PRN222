@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading.Tasks;
 using System;
+using System.IO;
 
 namespace Client
 {
@@ -34,7 +35,12 @@ namespace Client
                 return;
             }
             _client = new TcpChatClient(HostBox.Text, port);
-            _client.MessageReceived += msg => Dispatcher.Invoke(() => Messages.Items.Add(msg));
+            _client.MessageReceived += obj => Dispatcher.Invoke(() =>
+            {
+                if (obj is string s) Messages.Items.Add(s);
+                else if (obj is ChatImage ci) Messages.Items.Add(ci);
+                else if (obj is ChatFile cf) Messages.Items.Add(cf);
+            });
             _client.Connected += () => Dispatcher.Invoke(() => Messages.Items.Add("Đã kết nối tới server"));
             _client.Disconnected += () => Dispatcher.Invoke(() => Messages.Items.Add("Ngắt kết nối"));
 
@@ -78,6 +84,68 @@ namespace Client
                 InputBox.Text += picker.SelectedEmoji;
                 InputBox.Focus();
                 InputBox.CaretIndex = InputBox.Text.Length;
+            }
+        }
+
+        private async void ImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Hình ảnh|*.png;*.jpg;*.jpeg;*.gif;*.bmp|Tất cả|*.*"
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                try { await _client!.SendImageAsync(dlg.FileName); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                try
+                {
+                    var bytes = File.ReadAllBytes(dlg.FileName);
+                    Messages.Items.Add(new ChatImage("Me", System.IO.Path.GetFileName(dlg.FileName), bytes));
+                }
+                catch { }
+            }
+        }
+
+        private async void FileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Tất cả tập tin|*.*"
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                try { await _client!.SendFileAsync(dlg.FileName); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                try
+                {
+                    var fi = new FileInfo(dlg.FileName);
+                    Messages.Items.Add(new ChatFile("Me", fi.Name, fi.Length, fi.FullName));
+                }
+                catch { }
+            }
+        }
+
+        private void SaveReceivedFile_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as FrameworkElement)?.Tag is not ChatFile cf) return;
+            var dlg = new Microsoft.Win32.SaveFileDialog { FileName = cf.FileName };
+            if (dlg.ShowDialog() == true)
+            {
+                try { System.IO.File.Copy(cf.TempPath, dlg.FileName, true); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+        }
+
+        private void OpenSaveForFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is System.Windows.Documents.Hyperlink hl && hl.DataContext is ChatFile cf)
+            {
+                var dlg = new Microsoft.Win32.SaveFileDialog { FileName = cf.FileName };
+                if (dlg.ShowDialog() == true)
+                {
+                    try { System.IO.File.Copy(cf.TempPath, dlg.FileName, true); }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
             }
         }
 

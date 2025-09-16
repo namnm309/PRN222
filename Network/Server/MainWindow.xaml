@@ -6,19 +6,62 @@
         xmlns:local="clr-namespace:Server"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:ChatImage}">
+            <StackPanel>
+                <TextBlock Text="{Binding Sender, Mode=OneWay}" FontWeight="Bold" Margin="0,0,0,4"/>
+                <Image Source="{Binding Image}" MaxHeight="200" Stretch="Uniform"/>
+                <TextBlock Text="{Binding FileName, Mode=OneWay}" FontStyle="Italic"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:ChatFile}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="📄" FontSize="16" Margin="0,0,6,0"/>
+                <TextBlock Text="{Binding Sender, Mode=OneWay}" FontWeight="Bold" Margin="0,0,6,0"/>
+                <TextBlock Text=": "/>
+                <TextBlock>
+                    <Hyperlink Click="OpenSaveForFile_Click">
+                        <Run Text="{Binding FileName, Mode=OneWay}" />
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Text=" (nhấn để lưu)" Foreground="Gray" Margin="6,0,0,0"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="StatusLabel" Content="Đang khởi động..." FontWeight="Bold" Margin="5"/>
-        <ListBox x:Name="LogList" Grid.Row="1" Margin="5" FontFamily="Segoe UI Emoji"/>
+        <ListBox x:Name="LogList" Grid.Row="1" Grid.Column="0" Margin="5" FontFamily="Segoe UI Emoji"/>
 
-        <DockPanel Grid.Row="2" Margin="5">
-            <TextBox x:Name="ServerInput" DockPanel.Dock="Left" Width="600" KeyDown="ServerInput_KeyDown" FontFamily="Segoe UI Emoji"/>
-            <Button Content="😀" Width="40" Margin="5,0,0,0" Click="ServerEmoji_Click"/>
-            <Button Content="Gửi" Width="80" Margin="5,0,0,0" Click="ServerSend_Click"/>
-        </DockPanel>
+        <Border Grid.Row="1" Grid.Column="1" Margin="5" BorderBrush="Gray" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="Clients" FontWeight="Bold" Margin="5"/>
+                <ListBox x:Name="ClientList" />
+            </StackPanel>
+        </Border>
+
+        <!-- Khu vực nhập -->
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="ServerInput" Grid.Column="0" KeyDown="ServerInput_KeyDown" FontFamily="Segoe UI Emoji"/>
+            <Button Content="😀" Grid.Column="1" Width="40" Margin="5,0,0,0" Click="ServerEmoji_Click"/>
+            <Button Content="🖼" Grid.Column="2" Width="40" Margin="5,0,0,0" Click="ServerImage_Click"/>
+            <Button Content="📁" Grid.Column="3" Width="40" Margin="5,0,0,0" Click="ServerFile_Click"/>
+            <Button Content="Gửi" Grid.Column="4" Width="80" Margin="5,0,0,0" Click="ServerSend_Click"/>
+        </Grid>
     </Grid>
 </Window>
