@@ -83,7 +83,7 @@ namespace Client
 
         private TcpChatClient? _client;
 
-        private void HostBox_TextChanged()
+        private void HostBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

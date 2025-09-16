@@ -17,8 +17,10 @@ namespace Client
     {
         private readonly string _host;
         private readonly int _port;
+
         private TcpClient? _client;
         private CancellationTokenSource? _cts;
+
         public event Action<string>? MessageReceived;
         public event Action? Connected;
         public event Action? Disconnected;
@@ -36,6 +38,10 @@ namespace Client
             Connected?.Invoke();
             _cts = new CancellationTokenSource();
             _ = Task.Run(() => ReceiveLoop(_cts.Token));
+
+            // Gửi tên thiết bị ngay sau khi kết nối
+            string deviceName = Environment.MachineName;
+            await SendAsync($"__NAME__|{deviceName}");
         }
 
         private async Task ReceiveLoop(CancellationToken token)

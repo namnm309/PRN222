@@ -22,6 +22,7 @@ namespace Server
         private readonly TcpListener _listener;
         private readonly CancellationTokenSource _cts = new();
         private readonly ConcurrentDictionary<TcpClient, Task> _clients = new();
+        private readonly ConcurrentDictionary<TcpClient, string> _clientNames = new();
         public event Action<TcpClient, string>? MessageReceived;
         public event Action<TcpClient>? ClientConnected;
         public event Action<TcpClient>? ClientDisconnected;
@@ -73,14 +74,26 @@ namespace Server
                     int read = await stream.ReadAsync(buffer, 0, buffer.Length, token);
                     if (read == 0) break; // disconnected
                     string rawMessage = Encoding.UTF8.GetString(buffer, 0, read);
-                    // Lấy IP của client gửi
-                    var ip = ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
 
-                    // Gửi tới UI server (giữ nguyên raw message)
+                    // Kiểm tra handshake đặt tên thiết bị: "__NAME__|<deviceName>"
+                    if (rawMessage.StartsWith("__NAME__|"))
+                    {
+                        var name = rawMessage.Substring("__NAME__|".Length);
+                        _clientNames[client] = name;
+                        // Không broadcast handshake
+                        continue;
+                    }
+
+                    // Xác định nhãn nguồn: ưu tiên tên thiết bị, fallback IP
+                    string sourceLabel = _clientNames.TryGetValue(client, out var n)
+                        ? n
+                        : ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+
+                    // Log cho UI server (chỉ nội dung và nguồn)
                     MessageReceived?.Invoke(client, rawMessage);
 
-                    // Thêm tiền tố IP để các client khác phân biệt nguồn gửi
-                    string messageForClients = $"{ip}|{rawMessage}";
+                    // Gửi cho các client khác
+                    string messageForClients = $"{sourceLabel}|{rawMessage}";
                     await BroadcastAsync(messageForClients, client, token);
                 }
             }
