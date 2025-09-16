@@ -34,7 +34,7 @@ namespace Client
                 return;
             }
             _client = new TcpChatClient(HostBox.Text, port);
-            _client.MessageReceived += msg => Dispatcher.Invoke(() => Messages.Items.Add($"[Server] {msg}"));
+            _client.MessageReceived += msg => Dispatcher.Invoke(() => Messages.Items.Add(msg));
             _client.Connected += () => Dispatcher.Invoke(() => Messages.Items.Add("Đã kết nối tới server"));
             _client.Disconnected += () => Dispatcher.Invoke(() => Messages.Items.Add("Ngắt kết nối"));
 
@@ -82,5 +82,10 @@ namespace Client
         }
 
         private TcpChatClient? _client;
+
+        private void HostBox_TextChanged()
+        {
+
+        }
     }
 }

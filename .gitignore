@@ -1,0 +1,54 @@
+# Visual Studio
+.vs/
+
+# Build results
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Rider / ReSharper
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+**/packages.config
+
+# Logs
+*.log
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
+# Build cache
+*.cache
+
+# Debug/Release outputs
+*.pdb
+*.dll
+*.exe
+
+# Coverage / test
+TestResults/
+*.coverage
+*.coveragexml
+
+# Backup files
+*.bak
+
+# Others
+*.dbmdl

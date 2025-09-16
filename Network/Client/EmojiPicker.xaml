@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Emoji" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <ScrollViewer>
-        <UniformGrid Columns="8" Margin="5">
-            <!-- basic emoji set -->
+        <UniformGrid Columns="8" Margin="5">            
             <Button Content="😀" FontSize="20" Click="Emoji_Click"/>
             <Button Content="😁" FontSize="20" Click="Emoji_Click"/>
             <Button Content="😂" FontSize="20" Click="Emoji_Click"/>

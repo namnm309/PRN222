@@ -19,7 +19,6 @@ namespace Client
         private readonly int _port;
         private TcpClient? _client;
         private CancellationTokenSource? _cts;
-
         public event Action<string>? MessageReceived;
         public event Action? Connected;
         public event Action? Disconnected;
@@ -49,8 +48,21 @@ namespace Client
                 {
                     int read = await stream.ReadAsync(buffer, 0, buffer.Length, token);
                     if (read == 0) break;
-                    var msg = Encoding.UTF8.GetString(buffer, 0, read);
-                    MessageReceived?.Invoke(msg);
+                    var raw = Encoding.UTF8.GetString(buffer, 0, read);
+                    // Chuẩn "source|content". Nếu không khớp, để toàn bộ.
+                    string display;
+                    int sep = raw.IndexOf('|');
+                    if (sep > 0)
+                    {
+                        var source = raw.Substring(0, sep);
+                        var content = raw[(sep + 1)..];
+                        display = $"[{source}] {content}";
+                    }
+                    else
+                    {
+                        display = raw;
+                    }
+                    MessageReceived?.Invoke(display);
                 }
             }
             catch (Exception) when (token.IsCancellationRequested) { }

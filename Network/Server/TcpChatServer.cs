@@ -21,9 +21,7 @@ namespace Server
         private readonly int _port;
         private readonly TcpListener _listener;
         private readonly CancellationTokenSource _cts = new();
-
         private readonly ConcurrentDictionary<TcpClient, Task> _clients = new();
-
         public event Action<TcpClient, string>? MessageReceived;
         public event Action<TcpClient>? ClientConnected;
         public event Action<TcpClient>? ClientDisconnected;
@@ -35,18 +33,14 @@ namespace Server
             _listener = new TcpListener(_ipAddress, _port);
         }
 
-        /// <summary>
-        /// Bắt đầu lắng nghe (non-blocking). Gọi một lần khi khởi động.
-        /// </summary>
+        // Bắt đầu lắng nghe (non-blocking). Gọi một lần khi khởi động.
         public void Start()
         {
             _listener.Start();
             Task.Run(ListenLoop, _cts.Token);
         }
 
-        /// <summary>
-        /// Vòng lặp chấp nhận client. Chạy nền tới khi Cancel.
-        /// </summary>
+       // Vòng lặp chấp nhận client. Chạy nền tới khi Cancel.
         private async Task ListenLoop()
         {
             var token = _cts.Token;
@@ -66,9 +60,8 @@ namespace Server
             catch (OperationCanceledException) { }
         }
 
-        /// <summary>
-        /// Xử lý 1 client: đọc tin & broadcast. Mỗi client 1 Task riêng.
-        /// </summary>
+        
+        // Xử lý 1 client: đọc tin & broadcast. Mỗi client 1 Task riêng.       
         private async Task HandleClientAsync(TcpClient client, CancellationToken token)
         {
             var stream = client.GetStream();
@@ -79,9 +72,16 @@ namespace Server
                 {
                     int read = await stream.ReadAsync(buffer, 0, buffer.Length, token);
                     if (read == 0) break; // disconnected
-                    string message = Encoding.UTF8.GetString(buffer, 0, read);
-                    MessageReceived?.Invoke(client, message);
-                    await BroadcastAsync(message, client, token);
+                    string rawMessage = Encoding.UTF8.GetString(buffer, 0, read);
+                    // Lấy IP của client gửi
+                    var ip = ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+
+                    // Gửi tới UI server (giữ nguyên raw message)
+                    MessageReceived?.Invoke(client, rawMessage);
+
+                    // Thêm tiền tố IP để các client khác phân biệt nguồn gửi
+                    string messageForClients = $"{ip}|{rawMessage}";
+                    await BroadcastAsync(messageForClients, client, token);
                 }
             }
             catch (Exception) when (token.IsCancellationRequested) { }
@@ -96,10 +96,8 @@ namespace Server
             }
         }
 
-        /// <summary>
-        /// Server gửi tin nhắn ra toàn bộ client (khi người vận hành nhập tin).
-        /// </summary>
-        public Task SendToAllAsync(string message) => BroadcastAsync(message, null, _cts.Token);
+        // Tin nhắn chủ động từ server được gắn nhãn "Server" để client hiển thị dễ.
+        public Task SendToAllAsync(string message) => BroadcastAsync($"Server|{message}", null, _cts.Token);
 
         private async Task BroadcastAsync(string message, TcpClient? exclude, CancellationToken token)
         {

@@ -16,7 +16,7 @@
         <!-- cấu hình -->
         <StackPanel Orientation="Horizontal" Margin="5">
             <Label Content="Host:" VerticalAlignment="Center"/>
-            <TextBox x:Name="HostBox" Width="120" Text="127.0.0.1" Margin="0,0,5,0"/>
+            <TextBox x:Name="HostBox" Width="120" Text="Nhập host của máy " Margin="0,0,5,0"/>
             <Label Content="Port:" VerticalAlignment="Center"/>
             <TextBox x:Name="PortBox" Width="60" Text="13000" Margin="0,0,5,0"/>
             <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="80"/>
