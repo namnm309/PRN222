@@ -132,7 +132,6 @@ namespace Client
         public async Task SendFileAsync(string path, int chunkSize = 30000)
         {
             var fi = new System.IO.FileInfo(path);//Lấy info file 
-            if (fi.Length > 1_000_000_000) throw new InvalidOperationException("Vui lòng chọn file < 1GB");
             var name = fi.Name;//tên file
 
             //Gửi

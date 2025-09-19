@@ -117,11 +117,6 @@ namespace Client
                 try
                 {
                     var fi = new FileInfo(dlg.FileName);
-                    if (fi.Length > 1_000_000_000)
-                    {
-                        MessageBox.Show($"File quá lớn: {fi.Length / (1024*1024.0):0.##} MB (> 1024 MB)", "Không thể gửi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
                     await _client!.SendFileAsync(dlg.FileName);
                     Messages.Items.Add(new ChatFile("Me", fi.Name, fi.Length, fi.FullName));
                 }
