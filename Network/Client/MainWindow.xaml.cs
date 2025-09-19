@@ -167,6 +167,26 @@ namespace Client
             }
         }
 
+        private void OpenSaveForImage_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is System.Windows.Documents.Hyperlink hl && hl.DataContext is ChatImage ci)
+            {
+                var dlg = new Microsoft.Win32.SaveFileDialog { FileName = ci.FileName, Filter = "Hình ảnh|*.png;*.jpg;*.jpeg;*.gif;*.bmp|Tất cả|*.*" };
+                if (dlg.ShowDialog() == true)
+                {
+                    try
+                    {
+                        System.IO.File.WriteAllBytes(dlg.FileName, ci.Data);
+                        MessageBox.Show("Lưu ảnh thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
         private TcpChatClient? _client;
 
         private void HostBox_TextChanged(object sender, TextChangedEventArgs e)

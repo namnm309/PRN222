@@ -15,16 +15,19 @@ namespace Client
     /// </summary>
     public class TcpChatClient : IDisposable
     {
+        //Nạp 2 bín này vào constructor để connect tới server
         private readonly string _host;
         private readonly int _port;
 
         private TcpClient? _client;
         private CancellationTokenSource? _cts;
 
-        public event Action<object>? MessageReceived; // object: string, ChatImage, ChatFile
+        //evnt của WPF khi có tn , connect , disconnect 
+        public event Action<object>? MessageReceived; 
         public event Action? Connected;
         public event Action? Disconnected;
 
+        //constructor
         public TcpChatClient(string host, int port)
         {
             _host = host;
@@ -36,7 +39,7 @@ namespace Client
             _client = new TcpClient();
             await _client.ConnectAsync(_host, _port); //method cung cấp bởi class TCPClient
             // Đợi 50ms để server xử lý handshake nhằm đảm bảo map tên trước khi user gửi tin đầu tiên.
-            await Task.Delay(50);
+            //await Task.Delay(50);
 
             Connected?.Invoke();
             _cts = new CancellationTokenSource();
@@ -49,6 +52,8 @@ namespace Client
             // ready
         }
 
+
+        //Method nhận tin 
         private async Task ReceiveLoop(CancellationToken token)
         {
             var stream = _client!.GetStream();
@@ -109,6 +114,7 @@ namespace Client
             return _client.GetStream().WriteAsync(data, 0, data.Length);
         }
 
+        //Khi mất connect
         public void Dispose()
         {
             _cts?.Cancel();
@@ -125,18 +131,24 @@ namespace Client
 
         public async Task SendFileAsync(string path, int chunkSize = 30000)
         {
-            var fi = new System.IO.FileInfo(path);
-            if (fi.Length > 1_000_000_000) throw new InvalidOperationException("File too large");
-            var name = fi.Name;
+            var fi = new System.IO.FileInfo(path);//Lấy info file 
+            if (fi.Length > 1_000_000_000) throw new InvalidOperationException("Vui lòng chọn file < 1GB");
+            var name = fi.Name;//tên file
+
+            //Gửi
             await SendAsync($"__FILE_START__|{name}|{fi.Length}");
-            using var fs = fi.OpenRead();
-            var buffer = new byte[chunkSize];
+
+            using var fs = fi.OpenRead();//Đọc file 
+
+            var buffer = new byte[chunkSize];//chia ra từng đợt gửi , giống IDM 
+
             int read;
             while ((read = await fs.ReadAsync(buffer, 0, buffer.Length)) > 0)
             {
                 var chunkB64 = Convert.ToBase64String(buffer, 0, read);
                 await SendAsync($"__FILE_CHUNK__|{name}|{chunkB64}");
             }
+            //tb khi done
             await SendAsync($"__FILE_END__|{name}");
         }
 
@@ -153,7 +165,10 @@ namespace Client
                 Stream = new System.IO.FileStream(TempPath, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.Read);
             }
         }
+
+        //n file 1 lúc , n file từ n client 1 lúc 
         private readonly System.Collections.Concurrent.ConcurrentDictionary<string, FileReceiveContext> _fileReceive = new();
+        
         private void HandleFileProtocol(string source, string content)
         {
             if (content.StartsWith("__FILE_START__|"))

@@ -11,7 +11,12 @@
             <StackPanel>
                 <TextBlock Text="{Binding Sender, Mode=OneWay}" FontWeight="Bold"/>
                 <Image Source="{Binding Image}" MaxHeight="200" Stretch="Uniform"/>
-                <TextBlock Text="{Binding FileName, Mode=OneWay}" FontStyle="Italic"/>
+                <TextBlock>
+                    <Hyperlink Click="OpenSaveForImage_Click">
+                        <Run Text="{Binding FileName, Mode=OneWay}" />
+                    </Hyperlink>
+                    <Run Text=" – nhấn để lưu" Foreground="Gray"/>
+                </TextBlock>
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:ChatFile}">
@@ -41,7 +46,7 @@
         <!-- cấu hình -->
         <StackPanel Orientation="Horizontal" Margin="5">
             <Label Content="Host:" VerticalAlignment="Center"/>
-            <TextBox x:Name="HostBox" Width="120" Text="192.168.0.151" Margin="0,0,5,0" TextChanged="HostBox_TextChanged"/>
+            <TextBox x:Name="HostBox" Width="120" Text="192.168.1.6" Margin="0,0,5,0" TextChanged="HostBox_TextChanged"/>
             <Label Content="Port:" VerticalAlignment="Center"/>
             <TextBox x:Name="PortBox" Width="60"  Text="13000" Margin="0,0,5,0"/>
             <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="80"/>
