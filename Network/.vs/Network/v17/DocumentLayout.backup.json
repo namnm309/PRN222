@@ -1,64 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\",
+  "WorkspaceRootPath": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\chatimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\chatimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\tcpchatclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\tcpchatclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\tcpchatclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\chatimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\chatimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\chatfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\chatfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\emojipicker.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\emojipicker.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\tcpchatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\server\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\server\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\server\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\client\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|e:\\fpt\\k\u00EC 7\\prn222\\excercise prn222 class\\prn222-excercises\\network\\server\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\client\\emojipicker.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E5BC787F-016C-43D1-8BF2-D7F94C4F45DC}|Client\\Client.csproj|solutionrelative:client\\emojipicker.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|c:\\users\\tuf\\desktop\\github\\prn222-excercises\\network\\server\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6A3D7CF-27AB-4E4E-8FA4-A3AFE6E7F687}|Server\\Server.csproj|solutionrelative:server\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -69,117 +57,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Client\\MainWindow.xaml",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml",
-              "RelativeToolTip": "Client\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-15T15:54:04.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmojiPicker.xaml",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\EmojiPicker.xaml",
-              "RelativeDocumentMoniker": "Client\\EmojiPicker.xaml",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\EmojiPicker.xaml",
-              "RelativeToolTip": "Client\\EmojiPicker.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-16T05:43:56.064Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TcpChatClient.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\TcpChatClient.cs",
-              "RelativeDocumentMoniker": "Client\\TcpChatClient.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\TcpChatClient.cs",
-              "RelativeToolTip": "Client\\TcpChatClient.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAuwKgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T04:13:15.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChatFile.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\ChatFile.cs",
-              "RelativeDocumentMoniker": "Client\\ChatFile.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\ChatFile.cs",
-              "RelativeToolTip": "Client\\ChatFile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T03:39:53.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Client\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml.cs",
               "RelativeToolTip": "Client\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAewFAAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwGEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T15:54:04.465Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ChatImage.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\ChatImage.cs",
-              "RelativeDocumentMoniker": "Client\\ChatImage.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\ChatImage.cs",
-              "RelativeToolTip": "Client\\ChatImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T03:40:06.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TcpChatServer.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\TcpChatServer.cs",
-              "RelativeDocumentMoniker": "Server\\TcpChatServer.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\TcpChatServer.cs",
-              "RelativeToolTip": "Server\\TcpChatServer.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAIwD4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T16:07:36.82Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatImage.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\ChatImage.cs",
-              "RelativeDocumentMoniker": "Server\\ChatImage.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\ChatImage.cs",
-              "RelativeToolTip": "Server\\ChatImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T03:42:50.079Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "XamlReader.cs",
               "DocumentMoniker": "C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
               "ToolTip": "C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs [Read Only]",
               "ViewState": "AgIAAKUBAAAAAAAAAAAEwLUBAAACAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T09:10:05.257Z",
@@ -187,34 +86,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Client\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\MainWindow.xaml",
+              "RelativeToolTip": "Client\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-15T15:54:04.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TcpChatServer.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\TcpChatServer.cs",
+              "RelativeDocumentMoniker": "Server\\TcpChatServer.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\TcpChatServer.cs",
+              "RelativeToolTip": "Server\\TcpChatServer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:07:36.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TcpChatClient.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\TcpChatClient.cs",
+              "RelativeDocumentMoniker": "Client\\TcpChatClient.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\TcpChatClient.cs",
+              "RelativeToolTip": "Client\\TcpChatClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T04:13:15.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Server\\MainWindow.xaml",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml",
               "RelativeToolTip": "Server\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-15T15:53:47.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "Client\\AssemblyInfo.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\AssemblyInfo.cs",
-              "RelativeToolTip": "Client\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T04:13:28.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "Server\\AssemblyInfo.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\AssemblyInfo.cs",
               "RelativeToolTip": "Server\\AssemblyInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -222,33 +145,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "App.xaml",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\App.xaml",
               "RelativeDocumentMoniker": "Server\\App.xaml",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\App.xaml",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\App.xaml",
               "RelativeToolTip": "Server\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-16T06:05:35.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
               "Title": "App.xaml",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\App.xaml",
               "RelativeDocumentMoniker": "Client\\App.xaml",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Client\\App.xaml",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\App.xaml",
               "RelativeToolTip": "Client\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-16T06:05:29.061Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 9,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Client\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\AssemblyInfo.cs",
+              "RelativeToolTip": "Client\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T04:13:28.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmojiPicker.xaml",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\EmojiPicker.xaml",
+              "RelativeDocumentMoniker": "Client\\EmojiPicker.xaml",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\EmojiPicker.xaml",
+              "RelativeToolTip": "Client\\EmojiPicker.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-16T05:43:56.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Server\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\FPT\\K\u00EC 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Server\\MainWindow.xaml.cs",
               "RelativeToolTip": "Server\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

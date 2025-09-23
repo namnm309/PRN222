@@ -135,15 +135,21 @@ namespace Server
                     var fi = new System.IO.FileInfo(dlg.FileName);
                     await _server.SendToAllAsync($"__FILE_START__|{fi.Name}|{fi.Length}");
                     using var fs = fi.OpenRead();
-                    var buffer = new byte[30000];
+                    var buffer = new byte[256 * 1024];
                     int read;
+                    long sent = 0;
                     while ((read = fs.Read(buffer, 0, buffer.Length)) > 0)
                     {
                         var b64 = Convert.ToBase64String(buffer, 0, read);
                         await _server.SendToAllAsync($"__FILE_CHUNK__|{fi.Name}|{b64}");
+                        sent += read;
+                        var pct = (double)sent / fi.Length * 100.0;
+                        ServerSendProgress.Value = pct;
+                        ServerSendProgressText.Text = $"{fi.Name} {(sent / 1024d / 1024d):0.##}/{(fi.Length / 1024d / 1024d):0.##} MB";
                     }
                     await _server.SendToAllAsync($"__FILE_END__|{fi.Name}");
                     LogList.Items.Add(new ChatFile("Server", fi.Name, fi.Length, fi.FullName));
+                    ServerSendProgress.Value = 0; ServerSendProgressText.Text = string.Empty;
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }

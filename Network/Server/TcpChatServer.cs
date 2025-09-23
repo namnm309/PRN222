@@ -53,6 +53,9 @@ namespace Server
                     var client = await _listener.AcceptTcpClientAsync(token);
                     if (token.IsCancellationRequested) break;
 
+                    client.NoDelay = true;
+                    client.SendBufferSize = 1024 * 1024;
+                    client.ReceiveBufferSize = 1024 * 1024;
                     ClientConnected?.Invoke(client);
                     // Start processing client
                     var task = Task.Run(() => HandleClientAsync(client, token), token);

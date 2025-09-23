@@ -41,6 +41,24 @@ namespace Client
                 else if (obj is ChatImage ci) Messages.Items.Add(ci);
                 else if (obj is ChatFile cf) Messages.Items.Add(cf);
             });
+            _client.FileSendProgress += (name, sent, total) => Dispatcher.Invoke(() =>
+            {
+                if (total > 0)
+                {
+                    var pct = (double)sent / total * 100.0;
+                    SendProgress.Value = pct;
+                    SendProgressText.Text = $"{name} {(sent / 1024d / 1024d):0.##}/{(total / 1024d / 1024d):0.##} MB";
+                }
+            });
+            _client.FileReceiveProgress += (name, written, total) => Dispatcher.Invoke(() =>
+            {
+                if (total > 0)
+                {
+                    var pct = (double)written / total * 100.0;
+                    RecvProgress.Value = pct;
+                    RecvProgressText.Text = $"{name} {(written / 1024d / 1024d):0.##}/{(total / 1024d / 1024d):0.##} MB";
+                }
+            });
             _client.Connected += () => Dispatcher.Invoke(() => Messages.Items.Add("Đã kết nối tới server"));
             _client.Disconnected += () => Dispatcher.Invoke(() => Messages.Items.Add("Ngắt kết nối"));
 

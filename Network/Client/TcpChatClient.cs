@@ -26,6 +26,8 @@ namespace Client
         public event Action<object>? MessageReceived; 
         public event Action? Connected;
         public event Action? Disconnected;
+        public event Action<string,long,long>? FileSendProgress; // name, sent, total
+        public event Action<string,long,long>? FileReceiveProgress; // name, written, total
 
         //constructor
         public TcpChatClient(string host, int port)
@@ -37,6 +39,9 @@ namespace Client
         public async Task ConnectAsync()
         {
             _client = new TcpClient();
+            _client.NoDelay = true;
+            _client.SendBufferSize = 1024 * 1024;
+            _client.ReceiveBufferSize = 1024 * 1024;
             await _client.ConnectAsync(_host, _port); //method cung cấp bởi class TCPClient
             // Đợi 50ms để server xử lý handshake nhằm đảm bảo map tên trước khi user gửi tin đầu tiên.
             //await Task.Delay(50);
@@ -129,7 +134,7 @@ namespace Client
             return SendAsync($"__IMG__|{name}|{b64}");
         }
 
-        public async Task SendFileAsync(string path, int chunkSize = 30000)
+        public async Task SendFileAsync(string path, int chunkSize = 262144)
         {
             var fi = new System.IO.FileInfo(path);//Lấy info file 
             var name = fi.Name;//tên file
@@ -142,13 +147,17 @@ namespace Client
             var buffer = new byte[chunkSize];//chia ra từng đợt gửi , giống IDM 
 
             int read;
+            long sent = 0;
             while ((read = await fs.ReadAsync(buffer, 0, buffer.Length)) > 0)
             {
                 var chunkB64 = Convert.ToBase64String(buffer, 0, read);
                 await SendAsync($"__FILE_CHUNK__|{name}|{chunkB64}");
+                sent += read;
+                FileSendProgress?.Invoke(name, sent, fi.Length);
             }
             //tb khi done
             await SendAsync($"__FILE_END__|{name}");
+            FileSendProgress?.Invoke(name, fi.Length, fi.Length);
         }
 
         private class FileReceiveContext
@@ -187,6 +196,7 @@ namespace Client
                 var bytes = Convert.FromBase64String(parts[2]);
                 ctx.Stream.Write(bytes,0,bytes.Length);
                 ctx.Written += bytes.Length;
+                FileReceiveProgress?.Invoke(name, ctx.Written, ctx.Size);
             }
             else if (content.StartsWith("__FILE_END__|"))
             {
@@ -198,6 +208,7 @@ namespace Client
                     ctx.Stream.Dispose();
                     var chatFile = new ChatFile(source, name, ctx.Size, ctx.TempPath);
                     MessageReceived?.Invoke(chatFile);
+                    FileReceiveProgress?.Invoke(name, ctx.Size, ctx.Size);
                 }
             }
         }
