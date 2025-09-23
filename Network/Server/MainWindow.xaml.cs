@@ -133,11 +133,6 @@ namespace Server
                 try
                 {
                     var fi = new System.IO.FileInfo(dlg.FileName);
-                    if (fi.Length > 1_000_000_000)
-                    {
-                        MessageBox.Show($"File quá lớn: {fi.Length / (1024*1024.0):0.##} MB (> 1024 MB)", "Không thể gửi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
                     await _server.SendToAllAsync($"__FILE_START__|{fi.Name}|{fi.Length}");
                     using var fs = fi.OpenRead();
                     var buffer = new byte[30000];
@@ -200,6 +195,26 @@ namespace Server
                     {
                         System.IO.File.Copy(cf.TempPath, dlg.FileName, true);
                         MessageBox.Show("Lưu tập tin thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
+        private void OpenSaveForImage_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is System.Windows.Documents.Hyperlink hl && hl.DataContext is ChatImage ci)
+            {
+                var dlg = new Microsoft.Win32.SaveFileDialog { FileName = ci.FileName, Filter = "Hình ảnh|*.png;*.jpg;*.jpeg;*.gif;*.bmp|Tất cả|*.*" };
+                if (dlg.ShowDialog() == true)
+                {
+                    try
+                    {
+                        System.IO.File.WriteAllBytes(dlg.FileName, ci.Data);
+                        MessageBox.Show("Lưu ảnh thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     catch (Exception ex)
                     {

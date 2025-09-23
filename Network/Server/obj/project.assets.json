@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FPT\\Kì 7\\PRN222\\PRN222\\Network\\Server\\Server.csproj",
+      "projectUniqueName": "E:\\FPT\\Kì 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "E:\\FPT\\Kì 7\\PRN222\\PRN222\\Network\\Server\\Server.csproj",
+      "projectPath": "E:\\FPT\\Kì 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Ngoc Lan\\.nuget\\packages\\",
-      "outputPath": "E:\\FPT\\Kì 7\\PRN222\\PRN222\\Network\\Server\\obj\\",
+      "outputPath": "E:\\FPT\\Kì 7\\PRN222\\Excercise Prn222 Class\\PRN222-Excercises\\Network\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
