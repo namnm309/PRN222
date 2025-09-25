@@ -13,11 +13,8 @@ namespace Client
             Sender = sender;
             FileName = fileName;
             Data = data;
-            
             using var ms = new System.IO.MemoryStream(data);
-            
             var bmp = new BitmapImage();
-            
             bmp.BeginInit();
             bmp.CacheOption = BitmapCacheOption.OnLoad; // load toàn bộ vào bộ nhớ
             bmp.StreamSource = ms;

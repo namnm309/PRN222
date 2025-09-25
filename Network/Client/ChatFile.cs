@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Client
 {
@@ -9,7 +9,6 @@ namespace Client
         public long Size { get; }
         public string TempPath { get; }
         public string DisplaySize => FormatBytes(Size);
-        
         public ChatFile(string sender, string fileName, long size, string tempPath)
         {
             Sender = sender;
@@ -17,8 +16,6 @@ namespace Client
             Size = size;
             TempPath = tempPath;
         }
-        
-        //format lại cái kích thức để hiển thị 
         private static string FormatBytes(long bytes)
         {
             const long KB = 1024;

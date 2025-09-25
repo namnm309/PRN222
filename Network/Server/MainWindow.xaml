@@ -11,12 +11,7 @@
             <StackPanel>
                 <TextBlock Text="{Binding Sender, Mode=OneWay}" FontWeight="Bold" Margin="0,0,0,4"/>
                 <Image Source="{Binding Image}" MaxHeight="200" Stretch="Uniform"/>
-                <TextBlock>
-                    <Hyperlink Click="OpenSaveForImage_Click">
-                        <Run Text="{Binding FileName, Mode=OneWay}" />
-                    </Hyperlink>
-                    <Run Text=" – nhấn để lưu" Foreground="Gray"/>
-                </TextBlock>
+                <TextBlock Text="{Binding FileName, Mode=OneWay}" FontStyle="Italic"/>
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:ChatFile}">

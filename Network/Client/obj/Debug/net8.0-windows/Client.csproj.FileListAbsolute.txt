@@ -70,14 +70,42 @@ E:\FPT\Kì 7\PRN222\Network\Client\obj\Debug\net8.0-windows\Client.genruntimecon
 E:\FPT\Kì 7\PRN222\Network\Client\obj\Debug\net8.0-windows\ref\Client.dll
 E:\FPT\Kì 7\PRN222\PRN222\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.baml
 E:\FPT\Kì 7\PRN222\PRN222\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.exe
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.deps.json
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.runtimeconfig.json
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.dll
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.pdb
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.baml
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.baml
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\App.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client_MarkupCompile.cache
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client_MarkupCompile.lref
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\MainWindow.baml
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.g.resources
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.AssemblyInfoInputs.cache
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.AssemblyInfo.cs
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.csproj.CoreCompileInputs.cache
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.sourcelink.json
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.dll
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\refint\Client.dll
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.pdb
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.genruntimeconfig.cache
+E:\FPT Material\Project\PRN222\PRN222_LAB1\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\ref\Client.dll
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.exe
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.deps.json
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.runtimeconfig.json
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.dll
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.pdb
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.baml
+E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.baml
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.g.cs
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\SaveProgressWindow.g.cs
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\App.g.cs
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client_MarkupCompile.cache
@@ -94,27 +122,3 @@ E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.pdb
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.genruntimeconfig.cache
 E:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\ref\Client.dll
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.exe
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.deps.json
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.runtimeconfig.json
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.dll
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\bin\Debug\net8.0-windows\Client.pdb
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.baml
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\EmojiPicker.g.cs
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\MainWindow.g.cs
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\App.g.cs
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client_MarkupCompile.cache
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client_MarkupCompile.lref
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\MainWindow.baml
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.g.resources
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.AssemblyInfoInputs.cache
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.AssemblyInfo.cs
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.csproj.CoreCompileInputs.cache
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.sourcelink.json
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.dll
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\refint\Client.dll
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.pdb
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\Client.genruntimeconfig.cache
-E:\FPT\Kì 7\PRN222\Excercise Prn222 Class\PRN222-Excercises\Network\Client\obj\Debug\net8.0-windows\ref\Client.dll

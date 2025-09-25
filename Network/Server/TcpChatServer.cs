@@ -35,14 +35,14 @@ namespace Server
             _listener = new TcpListener(_ipAddress, _port);
         }
 
-        // bđ nghe 
+        // Bắt đầu lắng nghe (non-blocking). Gọi một lần khi khởi động.
         public void Start()
         {
             _listener.Start();
             Task.Run(ListenLoop, _cts.Token);
         }
 
-       // accept
+       // Vòng lặp chấp nhận client. Chạy nền tới khi Cancel.
         private async Task ListenLoop()
         {
             var token = _cts.Token;
@@ -64,7 +64,7 @@ namespace Server
         }
 
         
-        // Dùng để nhận tin từ client , đặt tên     
+        // Xử lý 1 client: đọc tin & broadcast. Mỗi client 1 Task riêng.       
         private async Task HandleClientAsync(TcpClient client, CancellationToken token)
         {
             var stream = client.GetStream();
@@ -89,7 +89,18 @@ namespace Server
                         if (rawMessage.StartsWith("__NAME__|"))
                         {
                             var name = rawMessage.Substring("__NAME__|".Length);
+                            var oldName = _clientNames.TryGetValue(client, out var existingName) ? existingName : null;
                             _clientNames[client] = name;
+                            
+                            // Thông báo thay đổi tên nếu đã có tên cũ
+                            if (oldName != null && oldName != name)
+                            {
+                                var ip = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+                                var changeMessage = $"[{DateTime.Now:t}] {ip} ({oldName}) đã đổi tên thành {name}";
+                                MessageReceived?.Invoke(client, changeMessage);
+                                await BroadcastAsync($"Server|{changeMessage}", null, token);
+                            }
+                            
                             ClientsChanged?.Invoke(); // cập nhật danh sách sau khi đặt tên
                             continue;
                         }
