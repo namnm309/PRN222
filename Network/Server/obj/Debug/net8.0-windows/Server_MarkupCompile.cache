@@ -1,20 +1,31 @@
 ﻿Server
-
+1.0.0.0
 
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\TUF\Desktop\Github\PRN222-Excercises\Network\Server\obj\Debug\net8.0-windows\
+=======
+e:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Server\obj\Debug\net8.0-windows\
+>>>>>>> a90d80b249db340af7b2ff6c70de809c71d64d6e
 Server
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+<<<<<<< HEAD
 C:\Users\TUF\Desktop\Github\PRN222-Excercises\Network\Server\App.xaml
 2-1518782245
 
 8841774408
+=======
+e:\FPT\Kì 7\PRN222\Ex in Class\PRN222-Excercises\Network\Server\App.xaml
+3-1049439994
+
+11-1978346196
+>>>>>>> a90d80b249db340af7b2ff6c70de809c71d64d6e
 198-192518753
 EmojiPicker.xaml;MainWindow.xaml;
 
-False
+True
 

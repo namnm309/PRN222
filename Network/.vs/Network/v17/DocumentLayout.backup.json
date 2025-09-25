@@ -77,12 +77,11 @@
               "Title": "XamlReader.cs",
               "DocumentMoniker": "C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
-              "ToolTip": "C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs [Read Only]",
+              "ToolTip": "C:\\Users\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Ngoc Lan\\AppData\\Local\\Temp\\.vsdbgsrc\\aad6be2495d0a786b94b3514a5b6903407fe2d6a75ad7e505df6a9d895927867\\XamlReader.cs",
               "ViewState": "AgIAAKUBAAAAAAAAAAAEwLUBAAACAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T09:10:05.257Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2025-09-16T09:10:05.257Z"
             },
             {
               "$type": "Document",
@@ -115,7 +114,7 @@
               "RelativeDocumentMoniker": "Client\\TcpChatClient.cs",
               "ToolTip": "C:\\Users\\TUF\\Desktop\\Github\\PRN222-Excercises\\Network\\Client\\TcpChatClient.cs",
               "RelativeToolTip": "Client\\TcpChatClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAowHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T04:13:15.937Z",
               "EditorCaption": ""

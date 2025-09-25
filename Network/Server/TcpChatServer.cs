@@ -92,7 +92,18 @@ namespace Server
                         if (rawMessage.StartsWith("__NAME__|"))
                         {
                             var name = rawMessage.Substring("__NAME__|".Length);
+                            var oldName = _clientNames.TryGetValue(client, out var existingName) ? existingName : null;
                             _clientNames[client] = name;
+                            
+                            // Thông báo thay đổi tên nếu đã có tên cũ
+                            if (oldName != null && oldName != name)
+                            {
+                                var ip = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+                                var changeMessage = $"[{DateTime.Now:t}] {ip} ({oldName}) đã đổi tên thành {name}";
+                                MessageReceived?.Invoke(client, changeMessage);
+                                await BroadcastAsync($"Server|{changeMessage}", null, token);
+                            }
+                            
                             ClientsChanged?.Invoke(); // cập nhật danh sách sau khi đặt tên
                             continue;
                         }

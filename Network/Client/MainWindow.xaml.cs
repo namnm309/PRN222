@@ -34,7 +34,7 @@ namespace Client
                 MessageBox.Show("Port không hợp lệ");
                 return;
             }
-            _client = new TcpChatClient(HostBox.Text, port);
+            _client = new TcpChatClient(HostBox.Text, port, NameBox.Text);
             _client.MessageReceived += obj => Dispatcher.Invoke(() =>
             {
                 if (obj is string s) Messages.Items.Add(s);
@@ -205,6 +205,32 @@ namespace Client
         private void HostBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private async void ChangeNameBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (_client == null || !_client.IsConnected)
+            {
+                MessageBox.Show("Chưa kết nối tới server");
+                return;
+            }
+
+            var newName = NameBox.Text.Trim();
+            if (string.IsNullOrEmpty(newName))
+            {
+                MessageBox.Show("Tên không được để trống");
+                return;
+            }
+
+            try
+            {
+                await _client.ChangeNameAsync(newName);
+                Messages.Items.Add($"Đã đổi tên thành: {newName}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi đổi tên: {ex.Message}");
+            }
         }
     }
 }

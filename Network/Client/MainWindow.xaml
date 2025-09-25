@@ -87,6 +87,7 @@
         </Grid.RowDefinitions>
 
         <!-- cấu hình -->
+<<<<<<< HEAD
         <Border Margin="10" Style="{StaticResource CardBorder}">
             <StackPanel>
                 <Border Height="4" CornerRadius="6" Background="{StaticResource HeaderStripBlue}"/>
@@ -99,6 +100,18 @@
             </StackPanel>
             </StackPanel>
         </Border>
+=======
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="Tên:" VerticalAlignment="Center"/>
+            <TextBox x:Name="NameBox" Width="120" Text="Client" Margin="0,0,5,0"/>
+            <Label Content="Host:" VerticalAlignment="Center"/>
+            <TextBox x:Name="HostBox" Width="120" Text="192.168.0.151" Margin="0,0,5,0" TextChanged="HostBox_TextChanged"/>
+            <Label Content="Port:" VerticalAlignment="Center"/>
+            <TextBox x:Name="PortBox" Width="60"  Text="13000" Margin="0,0,5,0"/>
+            <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="80"/>
+            <Button x:Name="ChangeNameBtn" Content="Đổi tên" Click="ChangeNameBtn_Click" Width="80" Margin="5,0,0,0"/>
+        </StackPanel>
+>>>>>>> a90d80b249db340af7b2ff6c70de809c71d64d6e
 
         <!-- Danh sách tin nhắn -->
         <Border Grid.Row="1" Margin="10" Style="{StaticResource CardBorder}" Padding="6">
