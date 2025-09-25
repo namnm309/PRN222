@@ -35,14 +35,14 @@ namespace Server
             _listener = new TcpListener(_ipAddress, _port);
         }
 
-        // Bắt đầu lắng nghe (non-blocking). Gọi một lần khi khởi động.
+        // bđ nghe 
         public void Start()
         {
             _listener.Start();
             Task.Run(ListenLoop, _cts.Token);
         }
 
-       // Vòng lặp chấp nhận client. Chạy nền tới khi Cancel.
+       // accept
         private async Task ListenLoop()
         {
             var token = _cts.Token;
@@ -53,6 +53,9 @@ namespace Server
                     var client = await _listener.AcceptTcpClientAsync(token);
                     if (token.IsCancellationRequested) break;
 
+                    client.NoDelay = true;
+                    client.SendBufferSize = 1024 * 1024;
+                    client.ReceiveBufferSize = 1024 * 1024;
                     ClientConnected?.Invoke(client);
                     // Start processing client
                     var task = Task.Run(() => HandleClientAsync(client, token), token);
@@ -64,7 +67,7 @@ namespace Server
         }
 
         
-        // Xử lý 1 client: đọc tin & broadcast. Mỗi client 1 Task riêng.       
+        // Dùng để nhận tin từ client , đặt tên     
         private async Task HandleClientAsync(TcpClient client, CancellationToken token)
         {
             var stream = client.GetStream();

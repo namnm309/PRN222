@@ -133,22 +133,23 @@ namespace Server
                 try
                 {
                     var fi = new System.IO.FileInfo(dlg.FileName);
-                    if (fi.Length > 1_000_000_000)
-                    {
-                        MessageBox.Show($"File quá lớn: {fi.Length / (1024*1024.0):0.##} MB (> 1024 MB)", "Không thể gửi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
                     await _server.SendToAllAsync($"__FILE_START__|{fi.Name}|{fi.Length}");
                     using var fs = fi.OpenRead();
-                    var buffer = new byte[30000];
+                    var buffer = new byte[256 * 1024];
                     int read;
+                    long sent = 0;
                     while ((read = fs.Read(buffer, 0, buffer.Length)) > 0)
                     {
                         var b64 = Convert.ToBase64String(buffer, 0, read);
                         await _server.SendToAllAsync($"__FILE_CHUNK__|{fi.Name}|{b64}");
+                        sent += read;
+                        var pct = (double)sent / fi.Length * 100.0;
+                        ServerSendProgress.Value = pct;
+                        ServerSendProgressText.Text = $"{fi.Name} {(sent / 1024d / 1024d):0.##}/{(fi.Length / 1024d / 1024d):0.##} MB";
                     }
                     await _server.SendToAllAsync($"__FILE_END__|{fi.Name}");
                     LogList.Items.Add(new ChatFile("Server", fi.Name, fi.Length, fi.FullName));
+                    ServerSendProgress.Value = 0; ServerSendProgressText.Text = string.Empty;
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -200,6 +201,26 @@ namespace Server
                     {
                         System.IO.File.Copy(cf.TempPath, dlg.FileName, true);
                         MessageBox.Show("Lưu tập tin thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
+        private void OpenSaveForImage_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is System.Windows.Documents.Hyperlink hl && hl.DataContext is ChatImage ci)
+            {
+                var dlg = new Microsoft.Win32.SaveFileDialog { FileName = ci.FileName, Filter = "Hình ảnh|*.png;*.jpg;*.jpeg;*.gif;*.bmp|Tất cả|*.*" };
+                if (dlg.ShowDialog() == true)
+                {
+                    try
+                    {
+                        System.IO.File.WriteAllBytes(dlg.FileName, ci.Data);
+                        MessageBox.Show("Lưu ảnh thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     catch (Exception ex)
                     {

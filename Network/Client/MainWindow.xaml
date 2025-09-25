@@ -5,13 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Chat Client" Height="540" Width="920" Background="#f5f7fb" Foreground="#1a1a1a">
     <Window.Resources>
+        <SolidColorBrush x:Key="AccentBrush" Color="#2563eb"/>
+        <SolidColorBrush x:Key="CardBrush" Color="#ffffff"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#e5e7eb"/>
+        <SolidColorBrush x:Key="HeaderStripBlue" Color="#dbeafe"/>
+        <SolidColorBrush x:Key="HeaderStripCyan" Color="#cffafe"/>
+        <SolidColorBrush x:Key="HeaderStripGreen" Color="#dcfce7"/>
+        <Style x:Key="CardBorder" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource CardBrush}"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#ffffff"/>
+            <Setter Property="Foreground" Value="#1a1a1a"/>
+            <Setter Property="BorderBrush" Value="#d9dce3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#f0f3f9"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#e6ebf5"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <DataTemplate DataType="{x:Type local:ChatImage}">
             <StackPanel>
                 <TextBlock Text="{Binding Sender, Mode=OneWay}" FontWeight="Bold"/>
                 <Image Source="{Binding Image}" MaxHeight="200" Stretch="Uniform"/>
-                <TextBlock Text="{Binding FileName, Mode=OneWay}" FontStyle="Italic"/>
+                <TextBlock>
+                    <Hyperlink Click="OpenSaveForImage_Click">
+                        <Run Text="{Binding FileName, Mode=OneWay}" />
+                    </Hyperlink>
+                    <Run Text=" – nhấn để lưu" Foreground="Gray"/>
+                </TextBlock>
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:ChatFile}">
@@ -36,22 +83,36 @@
             <RowDefinition Height="Auto"/> <!-- cấu hình -->
             <RowDefinition Height="*"/>   <!-- tin nhắn -->
             <RowDefinition Height="Auto"/> <!-- nhập -->
+            <RowDefinition Height="Auto"/> <!-- tiến độ -->
         </Grid.RowDefinitions>
 
         <!-- cấu hình -->
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Host:" VerticalAlignment="Center"/>
-            <TextBox x:Name="HostBox" Width="120" Text="192.168.0.151" Margin="0,0,5,0" TextChanged="HostBox_TextChanged"/>
-            <Label Content="Port:" VerticalAlignment="Center"/>
-            <TextBox x:Name="PortBox" Width="60"  Text="13000" Margin="0,0,5,0"/>
-            <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="80"/>
-        </StackPanel>
+        <Border Margin="10" Style="{StaticResource CardBorder}">
+            <StackPanel>
+                <Border Height="4" CornerRadius="6" Background="{StaticResource HeaderStripBlue}"/>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Host:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox x:Name="HostBox" Width="160" Text="192.168.1.6" Margin="0,0,10,0"/>
+                <TextBlock Text="Port:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox x:Name="PortBox" Width="80"  Text="13000" Margin="0,0,10,0"/>
+                <Button x:Name="ConnectBtn" Content="Kết nối" Click="ConnectBtn_Click" Width="100"/>
+            </StackPanel>
+            </StackPanel>
+        </Border>
 
         <!-- Danh sách tin nhắn -->
-        <ListBox x:Name="Messages" Grid.Row="1" Margin="5" FontFamily="Segoe UI Emoji"/>
+        <Border Grid.Row="1" Margin="10" Style="{StaticResource CardBorder}" Padding="6">
+            <StackPanel>
+                <Border Height="4" CornerRadius="6" Background="{StaticResource HeaderStripCyan}"/>
+            <ListBox x:Name="Messages" FontFamily="Segoe UI Emoji" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
 
         <!-- Khu vực nhập -->
-        <Grid Grid.Row="2" Margin="5">
+        <Border Grid.Row="2" Margin="10" Style="{StaticResource CardBorder}">
+            <StackPanel>
+                <Border Height="4" CornerRadius="6" Background="{StaticResource HeaderStripGreen}"/>
+        <Grid Margin="0,6,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -65,5 +126,25 @@
             <Button x:Name="FileBtn" Grid.Column="3" Content="📁" Width="40" Margin="5,0,0,0" Click="FileBtn_Click"/>
             <Button x:Name="SendBtn" Grid.Column="4" Content="Gửi" Width="80" Margin="5,0,0,0" Click="SendBtn_Click"/>
         </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- Tiến độ truyền tải -->
+        <Border Grid.Row="3" Margin="10" Style="{StaticResource CardBorder}" Padding="10">
+            <StackPanel>
+                <Border Height="4" CornerRadius="6" Background="{StaticResource HeaderStripBlue}"/>
+                <TextBlock Text="Tiến độ truyền/nhận file" FontWeight="Bold" Margin="0,0,0,6"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Gửi:" Width="40"/>
+                    <ProgressBar x:Name="SendProgress" Height="10" Minimum="0" Maximum="100" Width="300"/>
+                    <TextBlock x:Name="SendProgressText" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,6,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="Nhận:" Width="40"/>
+                    <ProgressBar x:Name="RecvProgress" Height="10" Minimum="0" Maximum="100" Width="300"/>
+                    <TextBlock x:Name="RecvProgressText" Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
