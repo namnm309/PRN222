@@ -133,11 +133,6 @@ namespace Server
                 try
                 {
                     var fi = new System.IO.FileInfo(dlg.FileName);
-                    if (fi.Length > 1_000_000_000)
-                    {
-                        MessageBox.Show($"File quá lớn: {fi.Length / (1024*1024.0):0.##} MB (> 1024 MB)", "Không thể gửi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
                     await _server.SendToAllAsync($"__FILE_START__|{fi.Name}|{fi.Length}");
                     using var fs = fi.OpenRead();
                     var buffer = new byte[30000];

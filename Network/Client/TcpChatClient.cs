@@ -17,6 +17,7 @@ namespace Client
     {
         private readonly string _host;
         private readonly int _port;
+        private string _clientName;
 
         private TcpClient? _client;
         private CancellationTokenSource? _cts;
@@ -25,10 +26,13 @@ namespace Client
         public event Action? Connected;
         public event Action? Disconnected;
 
-        public TcpChatClient(string host, int port)
+        public bool IsConnected => _client?.Connected == true;
+
+        public TcpChatClient(string host, int port, string clientName = "")
         {
             _host = host;
             _port = port;
+            _clientName = string.IsNullOrEmpty(clientName) ? Environment.MachineName : clientName;
         }
 
         public async Task ConnectAsync()
@@ -42,9 +46,8 @@ namespace Client
             _cts = new CancellationTokenSource();
             _ = Task.Run(() => ReceiveLoop(_cts.Token));
 
-            // Gửi tên thiết bị ngay sau khi kết nối
-            string deviceName = Environment.MachineName;
-            await SendAsync($"__NAME__|{deviceName}");
+            // Gửi tên client ngay sau khi kết nối
+            await SendAsync($"__NAME__|{_clientName}");
 
             // ready
         }
@@ -109,6 +112,15 @@ namespace Client
             return _client.GetStream().WriteAsync(data, 0, data.Length);
         }
 
+        public async Task ChangeNameAsync(string newName)
+        {
+            if (_client == null || !_client.Connected) 
+                throw new InvalidOperationException("Client chưa kết nối");
+            
+            _clientName = newName;
+            await SendAsync($"__NAME__|{_clientName}");
+        }
+
         public void Dispose()
         {
             _cts?.Cancel();
@@ -126,7 +138,6 @@ namespace Client
         public async Task SendFileAsync(string path, int chunkSize = 30000)
         {
             var fi = new System.IO.FileInfo(path);
-            if (fi.Length > 1_000_000_000) throw new InvalidOperationException("File too large");
             var name = fi.Name;
             await SendAsync($"__FILE_START__|{name}|{fi.Length}");
             using var fs = fi.OpenRead();
