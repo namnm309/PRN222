@@ -20,6 +20,37 @@
             <Button Content="😡" FontSize="20" Click="Emoji_Click"/>
             <Button Content="🤯" FontSize="20" Click="Emoji_Click"/>
             <Button Content="🥳" FontSize="20" Click="Emoji_Click"/>
+            <!-- Thêm 30 emoji mới -->
+            <Button Content="🤗" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😴" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🤮" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🤓" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😇" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😬" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🤤" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🥺" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😈" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="💩" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😷" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="👀" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="👋" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="💪" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🙈" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="😜" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🫶" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🎶" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🌈" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="☕" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="👑" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="📚" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🚀" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🧠" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="💡" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🌟" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="🎯" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="📸" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="✈️" FontSize="20" Click="Emoji_Click"/>
+            <Button Content="💻" FontSize="20" Click="Emoji_Click"/>
         </UniformGrid>
     </ScrollViewer>
 </Window>
